@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>INDEX2-CHANGE</title>
+</head>
+<body>
+	<label>JS</label>
+	<br>
+	<select id="number-js">
+	<option value="1">one</option>
+	<option value="2">two</option>
+	<option value="3">three</option>
+	<option value="4">four</option>
+	<option value="5">five</option>
+    </select>
+    <br>
+    <label>jquery</label>
+	<br>
+	<select id="number-jquery">
+	<option value="1">one</option>
+	<option value="2">two</option>
+	<option value="3">three</option>
+	<option value="4">four</option>
+	<option value="5">five</option>
+    </select>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous">
+ </script>
+ <script>
+ 	var numberJS = document.getElementById('number-js');
+
+
+ 	numberJS.addEventListener('change',function(){
+ 		var selectedIndex = numberJS.selectedIndex;
+ 		var text = numberJS.options[selectedIndex].text;
+ 		var value = numberJS.options[selectedIndex].value;
+
+ 		alert("value:" + value + "text:" + text);
+ 	});
+ </script>
+ <script>
+ 	$(document).ready(function(){
+ 		$('#number-jquery').change(function(){
+ 			var numberValue = $('#number-jquery :selected').val();
+ 			var numberText = $('#number-jquery :selected').text()
+ 			alert("text:" + numberText + "value:" + numberValue);
+ 		})
+
+ 	});
+ </script>
+
+
+
+
+</body>
+</html>

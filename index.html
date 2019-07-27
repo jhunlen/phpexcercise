@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jhunlen</title>
+</head>
+<body>
+	<button id="javascript">javascript</button>
+	<button id="jquery">jquery</button>
+	<h1 id="fullname">jhunlen ajero</h1>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous">
+ </script>
+ <script>
+ 	var buttonJS = document.getElementById('javascript'); 
+ 	buttonJS.addEventListener('click',function() {
+ 		// alert('Javascript Button Clicked...!');
+ 		var fullname = document.getElementById('fullname');
+ 		fullname.innerHTML = "KAL SKILLS ACADEMIE";
+
+ 	});
+ </script>
+ <script>
+ 	$(document).ready(function(){
+ 		$('#jquery').click(function(){
+ 			$('#fullname').html("KAL SKILLS ACADEMIE VIA JQUERY....!");
+ 		});
+ 	});
+ </script>
+
+
+</body>
+</html>

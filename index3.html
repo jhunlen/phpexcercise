@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index3-table</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>username</th>
+				<th>email</th>
+			</tr>
+		</thead>
+		<tbody id="jquery-users">
+			<tr>
+				<td>
+					jhunlen
+				</td>
+				<td>
+					ajero
+				</td>
+				<td>
+					darkwebengine@gmail.com
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+
+
+
+
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous">
+ </script>
+ <script>
+ 	$(document).ready(function(){
+ 		$.ajax({
+ 			method: "GET",
+ 			url: "https://jsonplaceholder.typicode.com/users",
+ 			success: function(data) {
+ 				var table = $("#jquery-users");
+
+ 				data.forEach(function(row){
+ 					var tr = $('<tr></tr>');
+ 					var email = $("<td></td>");
+ 					var username = $("<td></td>");
+ 					var name = $("<td></td>");
+
+ 					email.html(row.email);
+ 					username.html(row.username);
+ 					name.html(row.name);
+ 					tr.append(name);
+ 					tr.append(username);
+ 					tr.append(email);
+
+ 					table.append(tr);
+
+ 				});
+ 				
+ 			}
+ 		})
+
+ 	});
+ </script>
+ 
+
+</body>
+</html>
